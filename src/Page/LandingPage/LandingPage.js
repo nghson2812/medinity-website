@@ -1,11 +1,37 @@
 import React from "react";
 import "./LandingPage.css";
 import bannerImg from "../../resources/banner_img.png";
+import logo from "../../resources/logo.png";
+import chatbot_icon from "../../resources/chatbot_icon.png";
+import symptom_checker_icon from "../../resources/symptom_checker_icon.png";
+import contact_us_img from "../../resources/contact_us_img.png";
+import {Swiper, SwiperSlide} from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import {Navigation, Pagination} from "swiper";
+import Form from "react-bootstrap/Form";
+import {FormGroup, InputGroup} from "react-bootstrap";
 
 function LandingPage() {
-  return (
+    const feedback = [
+        {
+            image: require("../../resources/profile_picture.png"),
+            name: "John Doe",
+            feedback: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqu laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo",
+            occupation: "Director"
+        },
+        {
+            image: require("../../resources/profile_picture.png"),
+            name: "John Hart",
+            feedback: "Set ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqu laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo",
+            occupation: "Director"
+        }
+    ];
+    return (
     <div style={{marginTop:"60px"}}>
-      <div className="section1">
+        <div className="section1">
           <div className="left-section">
               <h1>Symptom Diagnosis System</h1>
               <p>Simplifying day-to-day Habit with an easy-to-use software,
@@ -15,9 +41,9 @@ function LandingPage() {
           <div className="right-section">
               <img src={bannerImg} alt=""/>
           </div>
-      </div>
+        </div>
 
-      <div className="section2">
+        <div className="section2" id="section">
           <div className="heading">
               <h1>What Are Medinity System's Functions?</h1>
               <p>Our solution provides the easiest way for anyone to refer to their health condition</p>
@@ -25,7 +51,7 @@ function LandingPage() {
           <div className="content">
               <div className="upper">
                   <div className="symptom-checker">
-                      <img src="" alt=""/>
+                      <img src={symptom_checker_icon} alt=""/>
                       <h3>Symptom</h3>
                       <h3>Checker</h3>
                       <button><a href="#">Try Now</a></button>
@@ -37,16 +63,101 @@ function LandingPage() {
                            border: "1.5037px solid rgba(21, 39, 70, 0.21)",
                            transform: "rotate(-90deg)"}} />
                   <div className="chat-bot">
-                      <img src="" alt=""/>
+                      <img src={chatbot_icon} alt=""/>
                       <h3>Medical Assistant</h3>
                       <h3>(Chat Bot)</h3>
                       <button><a href="#">Try Now</a></button>
                   </div>
               </div>
+              <div className="lower">
+                  <div className="horizontal-line"
+                       style={{
+                           width: "285.7px",
+                           height: "0px",
+                           border: "1.5037px solid rgba(21, 39, 70, 0.21)"}}/>
+                  <img src={logo} alt=""/>
+                  <div className="horizontal-line"
+                       style={{
+                           width: "285.7px",
+                           height: "0px",
+                           border: "1.5037px solid rgba(21, 39, 70, 0.21)"}}/>
+              </div>
           </div>
-      </div>
+        </div>
+        <div className="section3" id="section">
+            <div className="heading">
+                <h1>What they say about us</h1>
+            </div>
+        </div>
+        <div className="section4" id="section">
+            <Swiper
+                slidesPerView={1}
+                spaceBetween={5}
+                centeredSlides={true}
+                speed={700}
+                loop={true}
+                loopFillGroupWithBlank={true}
+                pagination={{clickable: true}}
+                navigation={true}
+                autoplay={{ delay: 2000 }}
+                modules={[Pagination, Navigation]}
+                slideToClickedSlide={true}
+                className="mySwiper"
+            >
+                <div className="swiper-wrapper">
+                    {feedback.map((item, index) => (
+                        <SwiperSlide>
+                            <div className="swiper-container" style={{transition:"linear"}}>
+                                <div style={{borderStyle:"solid"}}><img src={item.image} alt=""/></div>
+                                <div className="text">
+                                    <p style={{fontSize:"17.5px"}}>{item.feedback}</p>
+                                    <p style={{fontSize:"21px", fontWeight:"800",margin:"0"}}>{item.name}</p>
+                                    <p style={{color:"#01C1A0", margin:"0"}}>{item.occupation}</p>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </div>
+            </Swiper>
+        </div>
+
+        <div className="section5" id="section">
+            <div className="left-section" style={{width:"50%"}}>
+                <img src={contact_us_img} alt=""/>
+            </div>
+            <div className="right-section" style={{width:"40%"}}>
+                <h1>Contact Us</h1>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                <div className="input" style={{width:"100%"}}>
+                    <form>
+                        <FormGroup className="form-group">
+                            <Form.Control placeholder="First Name"/>
+                        </FormGroup>
+                        <FormGroup className="form-group">
+                            <Form.Control placeholder="Last Name"/>
+                        </FormGroup>
+                    </form>
+                    <form>
+                        <FormGroup className="form-group">
+                            <Form.Control placeholder="Phone"/>
+                        </FormGroup>
+                        <FormGroup className="form-group">
+                            <Form.Control placeholder="Email"/>
+                        </FormGroup>
+                    </form>
+                    <form>
+                        <FormGroup className="form-group" style={{width:"100%"}}>
+                            <Form.Control as="textarea" rows={3} placeholder="Message"
+                                          style={{width:"100%", maxWidth:"100%", maxHeight:"141px", minHeight:"141px", fontSize:"16px"}}
+                            />
+                        </FormGroup>
+                    </form>
+                </div>
+                <button><a href="#">Submit</a></button>
+            </div>
+        </div>
     </div>
-  );
+    );
 }
 
 export default LandingPage;

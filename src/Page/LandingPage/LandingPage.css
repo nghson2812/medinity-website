@@ -121,21 +121,19 @@
     margin-top: 57px;
 }
 
-/*section3*/
+/*section4*/
 
-.section3 .heading {
+.section4 .heading {
     margin-bottom: 142px;
 }
 
-.section3 .heading h1 {
+.section4 .heading h1 {
     font-size: 35px;
     font-weight: 600;
     color: #152746;
     text-align: center;
     margin-bottom: 40px;
 }
-
-/*section4*/
 
 .section4 .swiper-wrapper .swiper-container {
     display: flex;
@@ -170,6 +168,7 @@
     align-items: center;
     gap: 10px;
 }
+
 .section5 .right-section form {
     display: flex;
     flex-direction: row;

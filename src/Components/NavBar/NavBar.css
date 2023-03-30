@@ -1,10 +1,10 @@
-.container {
+.navbar {
     display: flex;
     flex-direction: row;
     padding: 0 5%;
 }
 
-.container .left-navbar {
+.navbar .left-navbar {
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -12,7 +12,7 @@
     margin-right: auto;
 }
 
-.container .right-navbar {
+.navbar .right-navbar {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -20,7 +20,7 @@
     gap: 28px;
 }
 
-.container .right-navbar ul {
+.navbar .right-navbar ul {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -28,14 +28,14 @@
     gap: 50px;
 }
 
-.container .right-navbar ul li a {
+.navbar .right-navbar ul li a {
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
     color: black;
 }
 
-.container .right-navbar button {
+.navbar .right-navbar button {
     width: 98px;
     height: 38px;
     border: 2px solid #01C1A0;
@@ -43,7 +43,7 @@
     background: none;
 }
 
-.container .right-navbar button a {
+.navbar .right-navbar button a {
     text-decoration: none;
     color: #01C1A0;
     font-size: 14px;

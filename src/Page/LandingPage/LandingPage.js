@@ -10,27 +10,46 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-import {Navigation, Pagination} from "swiper";
+import SwiperCore, {Autoplay, Navigation, Pagination} from "swiper";
 import Form from "react-bootstrap/Form";
 import {FormGroup, InputGroup} from "react-bootstrap";
 
 function LandingPage() {
+    SwiperCore.use([Autoplay]);
     const feedback = [
         {
-            image: require("../../resources/profile_picture.png"),
-            name: "John Doe",
-            feedback: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqu laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo",
-            occupation: "Director"
+            image: require("../../resources/gai-xinh1 Small.jpeg"),
+            name: "Hanh Trang",
+            feedback: "Hiểu ngay vấn đề",
+            occupation: "Gai Xinh"
         },
         {
-            image: require("../../resources/profile_picture.png"),
-            name: "John Hart",
-            feedback: "Set ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqu laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo",
-            occupation: "Director"
+            image: require("../../resources/gai-xinh2 Small.jpeg"),
+            name: "Hanh Trang",
+            feedback: "Như zái",
+            occupation: "Gai Xinh"
+        },
+        {
+            image: require("../../resources/gai-xinh3 Small.jpeg"),
+            name: "Hanh Trang",
+            feedback: "Ngol",
+            occupation: "Gai Xinh"
+        },
+        {
+            image: require("../../resources/gai-xinh4 Small.jpeg"),
+            name: "Hanh Trang",
+            feedback: "Quá phê",
+            occupation: "Gai Xinh"
+        },
+        {
+            image: require("../../resources/gai-xinh5 Small.jpeg"),
+            name: "Hanh Trang",
+            feedback: "bú",
+            occupation: "Gai Xinh"
         }
     ];
     return (
-    <div style={{marginTop:"60px"}}>
+    <div style={{marginTop:"60px", marginBottom:"243px"}}>
         <div className="section1">
           <div className="left-section">
               <h1>Symptom Diagnosis System</h1>
@@ -84,12 +103,10 @@ function LandingPage() {
               </div>
           </div>
         </div>
-        <div className="section3" id="section">
-            <div className="heading">
-                <h1>What they say about us</h1>
-            </div>
-        </div>
         <div className="section4" id="section">
+            <div className="heading">
+                <h1>Choose your Pokemon</h1>
+            </div>
             <Swiper
                 slidesPerView={1}
                 spaceBetween={5}
@@ -99,7 +116,7 @@ function LandingPage() {
                 loopFillGroupWithBlank={true}
                 pagination={{clickable: true}}
                 navigation={true}
-                autoplay={{ delay: 2000 }}
+                autoplay={{ delay: 1000 }}
                 modules={[Pagination, Navigation]}
                 slideToClickedSlide={true}
                 className="mySwiper"

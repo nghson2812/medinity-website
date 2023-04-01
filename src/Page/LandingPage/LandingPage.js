@@ -109,7 +109,7 @@ function LandingPage() {
         </div>
         <div className="section4" id="section">
             <div className="heading">
-                <h1>Choose your Pokemon</h1>
+                <h1>What They Say About Us</h1>
             </div>
             <Swiper
                 slidesPerView={1}

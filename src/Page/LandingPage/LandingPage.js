@@ -5,14 +5,14 @@ import logo from "../../resources/logo.png";
 import chatbot_icon from "../../resources/chatbot_icon.png";
 import symptom_checker_icon from "../../resources/symptom_checker_icon.png";
 import contact_us_img from "../../resources/contact_us_img.png";
-import {Swiper, SwiperSlide} from "swiper/react";
+import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import SwiperCore, {Autoplay, Navigation, Pagination} from "swiper";
 import Form from "react-bootstrap/Form";
-import {FormGroup, InputGroup} from "react-bootstrap";
+import {FormGroup} from "react-bootstrap";
 
 function LandingPage() {
     SwiperCore.use([Autoplay]);
@@ -44,7 +44,7 @@ function LandingPage() {
         {
             image: require("../../resources/gai-xinh5 Small.jpeg"),
             name: "Hanh Trang",
-            feedback: "bú",
+            feedback: "Bú",
             occupation: "Gai Xinh"
         }
     ];
@@ -55,7 +55,7 @@ function LandingPage() {
               <h1>Symptom Diagnosis System</h1>
               <p>Simplifying day-to-day Habit with an easy-to-use software,
                   you can easily get the analysis for your health condition based on some basic data</p>
-              <button><a href="src/Page/LandingPage/LandingPage#">GET STARTED NOW</a></button>
+              <div className="btn"><a href="#">GET STARTED NOW</a></div>
           </div>
           <div className="right-section">
               <img src={bannerImg} alt=""/>
@@ -73,7 +73,9 @@ function LandingPage() {
                       <img src={symptom_checker_icon} alt=""/>
                       <h3>Symptom</h3>
                       <h3>Checker</h3>
-                      <button><a href="#">Try Now</a></button>
+                      <div className="try-now-btn">Try Now
+                          <span></span><span></span><span></span><span></span>
+                      </div>
                   </div>
                   <div className="vertical-line"
                        style={{
@@ -85,7 +87,9 @@ function LandingPage() {
                       <img src={chatbot_icon} alt=""/>
                       <h3>Medical Assistant</h3>
                       <h3>(Chat Bot)</h3>
-                      <button><a href="#">Try Now</a></button>
+                      <div className="try-now-btn">Try Now
+                          <span></span><span></span><span></span><span></span>
+                      </div>
                   </div>
               </div>
               <div className="lower">
@@ -116,16 +120,16 @@ function LandingPage() {
                 loopFillGroupWithBlank={true}
                 pagination={{clickable: true}}
                 navigation={true}
-                autoplay={{ delay: 1000 }}
+                autoplay={{ delay: 2000 }}
                 modules={[Pagination, Navigation]}
                 slideToClickedSlide={true}
-                className="mySwiper"
+                className="sample-slider"
             >
                 <div className="swiper-wrapper">
                     {feedback.map((item, index) => (
                         <SwiperSlide>
                             <div className="swiper-container" style={{transition:"linear"}}>
-                                <div style={{borderStyle:"solid"}}><img src={item.image} alt=""/></div>
+                                <div><img src={item.image} alt="" style={{borderStyle:"solid", borderWidth:"medium"}}/></div>
                                 <div className="text">
                                     <p style={{fontSize:"17.5px"}}>{item.feedback}</p>
                                     <p style={{fontSize:"21px", fontWeight:"800",margin:"0"}}>{item.name}</p>

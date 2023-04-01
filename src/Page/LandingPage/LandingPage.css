@@ -1,6 +1,70 @@
 #section {
     margin-top: 140px;
 }
+
+button {
+    cursor: pointer;
+}
+
+/*button design*/
+
+.btn {
+    cursor: pointer;
+    height: 68px;
+    width: 205px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s ease;
+    position: relative;
+    border-radius: 73px;
+    border: 2px solid #01C1A0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.btn::before,
+.btn::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+}
+
+.btn {
+    overflow: hidden;
+    transition: all 300ms ease;
+}
+
+.btn a {
+    color: #01C1A0;
+    text-decoration: none;
+}
+
+.btn:after {
+    width: 300%;
+    height: 300%;
+    left: -300%;
+    transform: rotate(45deg);
+    background-color: #01C1A0;
+    transition: all 300ms ease;
+}
+
+.btn:hover a {
+    color: #fff;
+    z-index: 10;
+    font-weight: 600;
+}
+
+.btn:hover::after {
+    left: -100%;
+}
+
+.btn:hover {
+    border: 2px solid #01C1A0;
+}
+
 /*section1*/
 .section1 {
     display: flex;
@@ -32,19 +96,6 @@
     color: #393F44;
     text-align: left;
     margin-bottom: 30px;
-}
-
-.section1 .left-section button {
-    border: 2px solid #01C1A0;
-    border-radius: 73px;
-    background: none;
-    width: 205px;
-    height: 68px;
-}
-
-.section1 .left-section button a {
-    text-decoration: none;
-    color: #01C1A0;
 }
 
 /*section2*/
@@ -82,6 +133,9 @@
 }
 
 .section2 .content .upper .chat-bot, .section2 .content .upper .symptom-checker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 20%;
 }
 
@@ -97,14 +151,67 @@
     font-weight: 400;
 }
 
-.section2 .content .upper button {
+/*try-now-btn custom*/
+
+.section2 .try-now-btn {
+    cursor: pointer;
+    background-color: #152746;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 37px;
     width: 153px;
     height: 57px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 57px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
     margin-top: 40px;
-    background: #152746;
-    border-radius: 37px;
-    border: none;
 }
+
+.section2 .try-now-btn span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: #88d9da;
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.07s);
+    z-index: -1;
+}
+
+.section2 .try-now-btn:hover {
+    color: black;
+}
+
+.section2 .try-now-btn:hover span {
+    transform: translateY(0) scale(2);
+}
+
+.section2 .try-now-btn span:nth-child(1) {
+    --n: 1;
+}
+
+.section2 .try-now-btn span:nth-child(2) {
+    --n: 2;
+}
+
+.section2 .try-now-btn span:nth-child(3) {
+    --n: 3;
+}
+
+.section2 .try-now-btn span:nth-child(4) {
+    --n: 4;
+}
+
 
 .section2 .content .upper a {
     text-decoration: none;
@@ -135,6 +242,8 @@
     margin-bottom: 40px;
 }
 
+/*customize swiper*/
+
 .section4 .swiper-wrapper .swiper-container {
     display: flex;
     flex-direction: row;
@@ -146,6 +255,33 @@
 .section4 .swiper-container .text {
     width: 40%;
     text-align: left;
+}
+
+.swiper-button-next {
+    background-image: url(../../resources/arrow-forward-outline.svg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+}
+
+.swiper-button-next::after {
+    display: none;
+}
+
+.swiper-button-prev {
+    background-image: url(../../resources/arrow-back-outline.svg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+}
+
+.swiper-button-prev::after {
+    display: none;
+}
+
+.section4 .swiper-pagination-bullet-active {
+    transition: visibility;
+    background-color: #01C1A0;
 }
 
 /*section5*/
@@ -204,4 +340,10 @@
 .section5 .right-section button a {
     text-decoration: none;
     color: white;
+}
+
+button:hover {
+    background: #01C1A0;
+    color: white;
+    transition: linear;
 }

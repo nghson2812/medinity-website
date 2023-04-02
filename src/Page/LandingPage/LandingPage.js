@@ -57,8 +57,8 @@ function LandingPage() {
                   you can easily get the analysis for your health condition based on some basic data</p>
               <div className="btn"><a href="#">GET STARTED NOW</a></div>
           </div>
-          <div className="right-section">
-              <img src={bannerImg} alt=""/>
+          <div className="right-section" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+              <img style={{width:"100%", height:"auto"}} src={bannerImg} alt=""/>
           </div>
         </div>
 
@@ -144,7 +144,7 @@ function LandingPage() {
 
         <div className="section5" id="section">
             <div className="left-section" style={{width:"50%"}}>
-                <img src={contact_us_img} alt=""/>
+                <img style={{width:"90%", height:"auto"}} src={contact_us_img} alt=""/>
             </div>
             <div className="right-section" style={{width:"40%"}}>
                 <h1>Contact Us</h1>
@@ -167,9 +167,9 @@ function LandingPage() {
                         </FormGroup>
                     </form>
                     <form>
-                        <FormGroup className="form-group" style={{width:"100%"}}>
+                        <FormGroup className="form-group" style={{width:"100%", display:"flex"}}>
                             <Form.Control as="textarea" rows={3} placeholder="Message"
-                                          style={{width:"100%", maxWidth:"100%", maxHeight:"141px", minHeight:"141px", fontSize:"16px"}}
+                                          style={{resize:"none", maxHeight:"141px", minHeight:"141px", fontSize:"16px"}}
                             />
                         </FormGroup>
                     </form>

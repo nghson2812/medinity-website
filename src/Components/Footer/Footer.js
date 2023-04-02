@@ -55,9 +55,9 @@ function Footer() {
                 </div>
                 <div className="lower">
                     <div className="line"></div>
-                    <div style={{display: "flex", alignItems:"center"}}>
+                    <div className="copyright" style={{display: "flex", alignItems:"center"}}>
                         <p style={{marginRight:"auto"}}>Copyright© 2023 Medinity</p>
-                        <div style={{}}><a href="#">Terms and Conditions</a>  | <a href="#">Privacy Policy</a></div>
+                        <div><a href="#">Terms and Conditions</a>  | <a href="#">Privacy Policy</a></div>
                     </div>
                 </div>
             </div>

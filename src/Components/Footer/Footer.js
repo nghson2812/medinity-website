@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-import logo_1 from "../../resources/logo-1.png";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faLocationDot, faGlobe, faPhone} from "@fortawesome/free-solid-svg-icons";
 import {SocialIcon} from "react-social-icons";

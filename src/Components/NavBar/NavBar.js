@@ -1,9 +1,11 @@
 import React from "react";
 import "./NavBar.css";
 import logo from "../../resources/logo.png"
+import SignIn from "../SignIn/SignIn";
 
 function NavBar() {
-  return (
+    const [signInPopUp, setSignInPopUp] = React.useState(false);
+    return (
       <div>
           <div className="navbar">
               <div className="left-navbar">
@@ -19,9 +21,10 @@ function NavBar() {
                       <li><a href="#">Services</a></li>
                       <li><a href="#">Contact</a></li>
                   </ul>
-                  <div className="btn" style={{width: "98px", height: "38px"}}><a href="#" style={{fontSize:"14px"}}>Sign up</a></div>
+                  <div className="btn" style={{width: "98px", height: "38px"}} onClick={() => setSignInPopUp(true)}><a href="#" style={{fontSize:"14px"}}>Sign up</a></div>
               </div>
           </div>
+          <SignIn trigger={signInPopUp} setTrigger={setSignInPopUp}/>
       </div>
   );
 }

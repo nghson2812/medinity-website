@@ -5,7 +5,7 @@ import logo from "../../resources/logo.png";
 import chatbot_icon from "../../resources/chatbot_icon.png";
 import symptom_checker_icon from "../../resources/symptom_checker_icon.png";
 import contact_us_img from "../../resources/contact_us_img.png";
-import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
+import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -13,9 +13,14 @@ import "swiper/css/autoplay";
 import SwiperCore, {Autoplay, Navigation, Pagination} from "swiper";
 import Form from "react-bootstrap/Form";
 import {FormGroup} from "react-bootstrap";
+import PreScreening from "../../Components/PreScreening/Prescreening";
+import SignIn from "../../Components/SignIn/SignIn";
 
 function LandingPage() {
     SwiperCore.use([Autoplay]);
+
+    const [buttonPopUp, setButtonPopUp] = React.useState(false);
+
     const feedback = [
         {
             image: require("../../resources/gai-xinh1 Small.jpeg"),
@@ -73,7 +78,7 @@ function LandingPage() {
                       <img src={symptom_checker_icon} alt=""/>
                       <h3>Symptom</h3>
                       <h3>Checker</h3>
-                      <div className="try-now-btn">Try Now
+                      <div className="try-now-btn" onClick={() => setButtonPopUp(true)}>Try Now
                           <span></span><span></span><span></span><span></span>
                       </div>
                   </div>
@@ -177,6 +182,7 @@ function LandingPage() {
                 <button><a href="#">Submit</a></button>
             </div>
         </div>
+        <PreScreening trigger={buttonPopUp} setTrigger={setButtonPopUp}/>
     </div>
     );
 }

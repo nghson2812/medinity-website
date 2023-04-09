@@ -1,0 +1,85 @@
+.sign-in-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in {
+    position: relative;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 0 30px 36px -6.0814px rgba(16, 24, 40, 0.1), 0 12px 12px -6.0814px rgba(16, 24, 40, 0.04);
+    border-radius: 18px;
+    padding: 40px;
+}
+
+.sign-in-inner {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.sign-in .sign-in-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sign-in .sign-in-header .left {
+    text-align: left;
+    margin: 0 auto 0 0;
+}
+
+.sign-in .sign-in-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sign-in .sign-in-body .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sign-in .sign-in-body .form-label {
+    text-align: left;
+}
+
+.sign-in .sign-in-body .form-control {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #E4E7EC;
+    border-radius: 4px;
+    text-indent: 10px;
+    padding: 0;
+}
+
+.sign-in .sign-in-body .sign-in-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background: #01C1A0;
+    color: white;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.sign-in .sign-in-body a {
+    font-size: 14px;
+    color: #01c1a0;
+}

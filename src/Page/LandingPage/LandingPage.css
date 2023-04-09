@@ -904,7 +904,7 @@ button {
         border: 2px solid #152746;
         border-radius: 4px;
         font-size: 14px;
-        padding: 10px;
+        padding-left: 10px;
     }
 
     .section5 .right-section button {
